@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <div class="navbar">Dashboard</div>
+    <div class="dashboard">
+        <p>Upload a file below:</p>
+        <input type="file" id="file">
+        <button onclick="uploadFile()">Upload</button>
+        <p id="status"></p>
+    </div>
+    <h2>User Data</h2>
+
+    <!-- Age Range Dropdown -->
+    <label for="age-range">Select Age Range:</label>
+    <select id="age-range" onchange="onAgeChange()">
+        <option value="0-100">Select</option>
+        <option value="0-10">0-10</option>
+        <option value="10-20">10-20</option>
+        <option value="20-30">20-30</option>
+        <option value="30-40">30-40</option>
+        <option value="40-50">40-50</option>
+        <option value="50-60">50-60</option>
+        <option value="60-70">60-70</option>
+        <option value="70-80">70-80</option>
+        <option value="80-90">80-90</option>
+        <option value="90-100">90-100</option>
+    </select>
+
+    <!-- User Data Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+ 
+    
+    <div>
+        <button id="prev-btn" onclick="changePage(-1)" style="display: none;">Previous</button>
+        <span id="page-info">Page 1</span>
+        <button id="next-btn" onclick="changePage(1)" style="display: none;">Next</button><br>
+        <input style="display: none;" type="number" id="goto-page" min="1"  placeholder="Go to page" />
+    <button id="go-btn" style="display: none;" onclick="goToPage()">Go</button>
+    </div>
+       <div>
+        <button id="export-csv" onclick="exportCSV()" style="display: none;">Export as CSV</button>
+        <button id="export-pdf" onclick="exportPDF()" style="display: none;">Export as PDF</button>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>
